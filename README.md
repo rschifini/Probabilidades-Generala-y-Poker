@@ -1,6 +1,6 @@
 # Poker Dice Probabilities for Five-of-a-Kind and Four-of-a-Kind
 
-The game Poker dice is played with five six-sided dice. Each player may roll up to 3 times their dice while holding the best dice between throws. 
+The game [Poker Dice](https://en.wikipedia.org/wiki/Poker_dice) is played with five six-sided dice. Each player may roll up to 3 times their dice while holding the best dice between throws. 
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Poker_dice), the probability for the hardest roll (Five-of-a-Kind) is 0.08%. This probability is calculated when all five dice are thrown at the same time, and all of them roll the same face at once. This is not the real probability of this outcome when playing by the three roll rule while holding.
 
