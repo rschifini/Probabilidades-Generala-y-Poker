@@ -1,15 +1,23 @@
 # Probabilidades de Generala y Poker
 Calculo de la probabilidad de obtener Generala o Poker en el juego de dados del mismo nombre
 
-El juego de dados Generala se juega con 5 dados de 6 lados. Cada jugador se turna para hacer un maximo de tres tiradas de dados, y de solo aquellos dados que no le sirven para la jugada que busca. Uno de los resultados mas dificiles es la Generala que se logra cuando los cinco dados son iguales.
+El juego de dados [Generala](https://en.wikipedia.org/wiki/Generala) se juega con cinco (5) dados de seis lados. Cada jugador se turna para hacer un maximo de tres tiradas de dados mientras que puede ir guardando entre tiradas aquellos dados que le son utiles. 
 
-El calculo de esta probabilidad no es sencillo, ya que el jugador va separando entre tirada y tirada aquellos dados de los que mas tiene. A veces las tiradas posteriores a la primera constan de 1 o mas dados. Esta variabilidad de dados tirados complica el calculo exacto de la probabilidad buscada.
+Uno de los resultados mas dificiles es la Generala, que se logra cuando se obtienen cinco dados iguales.
 
-En este repositorio se encuentra una rutina en JavaScript que puede simular N jugadas y contar cuantas de ellas terminan con los 5 dados iguales (Generala) o 4 dados iguales (Poker). La probabilidad de cada resultado es cuantas veces ocurrio dividido la cantidad de simulaciones. Este tipo de simulaciones al azar tienen el nombre de Metodo de Monte Carlo.
+El calculo analitico de esta probabilidad es complejo, ya que depende de contar correctamente todas las combinaciones posibles de dados tirados en las 3 tiradas. Por otro parte, los dados a tirar en la 2a o 3er tirada dependen de cuantos dados se van guardando de las tiradas previas. Esto conlleva a una gran cantidad de combinaciones, lo cual complica el calculo anlitico exacto de la probabilidad buscada.
+
+En vez de buscar una solucion analitica exacta, lo que se puede hacer es una simulacion Monte Carlo. Esto consiste en realizar una gran cantidad de jugadas y contar en cuantas de ellas se obtuvo el resultado deseado.  
+
+Este repositorio da una rutina en JavaScript que puede simular N jugadas y contar cuantas de ellas terminan con los 5 dados iguales (Generala) o 4 dados iguales (Poker). La probabilidad de cada resultado es cuantas veces ocurrio dividido la cantidad de simulaciones.
 
 ## Resultados
 Efectuando 1,000,000 simulaciones, la probabilidades son:
 
-p(Generala) = 0.046
-p(Poker) = 0.244
+|Tirada|probabilidad|porcentaje|
+|----|-----------|-------|
+|Generala| 0.046 |4.6%|
+|Poker| 0.244 |24.4%|
 
+### Nota:
+- La rutina permite cambiar la cantidad de dados con que se juega. Los resultados en este caso son la probabilidad que todos los dados muestren el mismo numero o todos menos uno. 
