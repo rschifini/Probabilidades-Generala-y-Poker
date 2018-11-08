@@ -1,15 +1,20 @@
-# Probabilidades de Generala y Poker
-Calculo de la probabilidad de obtener Generala o Poker en el juego de dados del mismo nombre
+# Poker Dice Probabilidades for Five-of-a-Kind and Four-of-a-Kind
 
-El juego de dados Generala se juega con 5 dados de 6 lados. Cada jugador se turna para hacer un maximo de tres tiradas de dados, y de solo aquellos dados que no le sirven para la jugada que busca. Uno de los resultados mas dificiles es la Generala que se logra cuando los cinco dados son iguales.
+The game Poker dice is played with five six-sided dice. Each player may roll up to 3 times their dice while holding the best dice between throws. 
 
-El calculo de esta probabilidad no es sencillo, ya que el jugador va separando entre tirada y tirada aquellos dados de los que mas tiene. A veces las tiradas posteriores a la primera constan de 1 o mas dados. Esta variabilidad de dados tirados complica el calculo exacto de la probabilidad buscada.
+According to Wikipedia, the probability for the hardest roll (Five-of-a-Kind) is 0.08%. This probability is calculated when all five dice are thrown at the same time, and all of them roll the same face at once. This is not the real probability of this outcome when playing by the three roll rule while holding.
 
-En este repositorio se encuentra una rutina en JavaScript que puede simular N jugadas y contar cuantas de ellas terminan con los 5 dados iguales (Generala) o 4 dados iguales (Poker). La probabilidad de cada resultado es cuantas veces ocurrio dividido la cantidad de simulaciones. Este tipo de simulaciones al azar tienen el nombre de Metodo de Monte Carlo.
+The real probability for the Five-of-a-Kind outcome is complex to calculate analitically. The number of dice to be thrown on the second and third roll depend on previous results. 
 
-## Resultados
-Efectuando 1,000,000 simulaciones, la probabilidades son:
+The approach given in this repository is to simulate N turns, each consisting of up to 3 rolls, while holding to the largest group of dice having the same face.  This Monte Carlo simulation is written in JavaScript.
 
-p(Generala) = 0.046
-p(Poker) = 0.244
+The simulation parameters are the number of dice, faces and simulations.     
 
+## Results
+For 1,000,000 simulations, the probabilities are:
+
+p(Five-of-a-Kind) = 0.046  ( 4.6%)
+p(Four-of-a-Kind) = 0.244  (24.4%)
+
+### Note:
+When changing the dice to be thrown to N, the resulting probabilities are for N-of-a-Kind and (N-1)-of-a-Kind.
