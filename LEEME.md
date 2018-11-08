@@ -1,4 +1,4 @@
-# Probabilidades de Generala y Poker
+# Probabilidades de Generala, Poker y Full House
 Calculo de la probabilidad de obtener Generala o Poker en el juego de dados del mismo nombre
 
 El juego de dados [Generala](https://en.wikipedia.org/wiki/Generala) se juega con cinco (5) dados de seis lados. Cada jugador se turna para hacer un maximo de tres tiradas de dados mientras que puede ir guardando entre tiradas aquellos dados que le son utiles. 
@@ -18,6 +18,9 @@ Efectuando 1,000,000 simulaciones, la probabilidades son:
 |----|-----------|-------|
 |Generala| 0.046 |4.6%|
 |Poker| 0.244 |24.4%|
+|Full House| 0.358 |35.8%|
 
 ### Nota:
 - La rutina permite cambiar la cantidad de dados con que se juega. Los resultados en este caso son la probabilidad que todos los dados muestren el mismo numero o todos menos uno. 
+- 'Probabilidades Generala.js' simula Poker y Generala
+- 'Probabilidades Full.js' simula Full House

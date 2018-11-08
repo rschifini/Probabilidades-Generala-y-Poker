@@ -1,4 +1,4 @@
-# Poker Dice Probabilities for Five-of-a-Kind and Four-of-a-Kind
+# Poker Dice Probabilities for Five-of-a-Kind, Four-of-a-Kind and Full House
 
 The game [Poker Dice](https://en.wikipedia.org/wiki/Poker_dice) is played with five six-sided dice. Each player may roll up to 3 times their dice while holding the best dice between throws. 
 
@@ -17,6 +17,9 @@ For 1,000,000 simulations, the probabilities are:
 |----|-----------|-------|
 |Five-of-a-Kind| 0.046 |4.6%|
 |Four-of-a-Kind| 0.244 |24.4%|
+|Full house| 0.358 |35.8%|
 
 ### Notes:
 - When changing the dice to be thrown to N, the resulting probabilities are for N-of-a-Kind and (N-1)-of-a-Kind.
+- 'Probabilidades Generala.js' file is used to simulate Five-of-a-Kind and Four-of-a-Kind
+- 'Probabilidades Full.js' file is used to simulate probabilities for Full house
