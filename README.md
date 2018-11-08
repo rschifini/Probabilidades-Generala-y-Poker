@@ -13,8 +13,10 @@ The simulation parameters are the number of dice, faces and simulations.
 ## Results
 For 1,000,000 simulations, the probabilities are:
 
-p(Five-of-a-Kind) = 0.046  ( 4.6%)
-p(Four-of-a-Kind) = 0.244  (24.4%)
+|Roll|probability|percent|
+|----|-----------|-------|
+|Five-of-a-Kind| 0.046 |4.6%|
+|Four-of-a-Kind| 0.244 |24.4%|
 
 ### Note:
 When changing the dice to be thrown to N, the resulting probabilities are for N-of-a-Kind and (N-1)-of-a-Kind.
