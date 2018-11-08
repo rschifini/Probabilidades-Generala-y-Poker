@@ -1,4 +1,4 @@
-# Poker Dice Probabilidades for Five-of-a-Kind and Four-of-a-Kind
+# Poker Dice Probabilities for Five-of-a-Kind and Four-of-a-Kind
 
 The game Poker dice is played with five six-sided dice. Each player may roll up to 3 times their dice while holding the best dice between throws. 
 
