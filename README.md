@@ -14,7 +14,7 @@ The simulation parameters are the number of dice, faces and simulations.
 For 1,000,000 simulations, the probabilities are:
 
 |Roll|probability|percent|
-|----|-----------|-------|
+|----|-----------:|-------:|
 |Five-of-a-Kind| 0.046 |4.6%|
 |Four-of-a-Kind| 0.244 |24.4%|
 |Full house| 0.358 |35.8%|

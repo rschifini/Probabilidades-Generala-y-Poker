@@ -15,7 +15,7 @@ Este repositorio da una rutina en JavaScript que puede simular N jugadas y conta
 Efectuando 1,000,000 simulaciones, la probabilidades son:
 
 |Tirada|probabilidad|porcentaje|
-|----|-----------|-------|
+|----|-----------:|-------:|
 |Generala| 0.046 |4.6%|
 |Poker| 0.244 |24.4%|
 |Full House| 0.358 |35.8%|
