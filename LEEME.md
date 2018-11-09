@@ -1,15 +1,15 @@
 # Probabilidades de Generala, Poker y Full House
-Calculo de la probabilidad de obtener Generala o Poker en el juego de dados del mismo nombre
+Cálculo de las probabilidades de obtener Generala, Poker, Escalera o Full en el juego de dados Generala.
 
-El juego de dados [Generala](https://en.wikipedia.org/wiki/Generala) se juega con cinco (5) dados de seis lados. Cada jugador se turna para hacer un maximo de tres tiradas de dados mientras que puede ir guardando entre tiradas aquellos dados que le son utiles. 
+El juego de dados [Generala](https://en.wikipedia.org/wiki/Generala) se juega con cinco (5) dados de seis lados. Cada jugador se turna para hacer un máximo de tres tiradas de dados mientras que puede ir guardando entre éstas aquellos dados que son útiles. 
 
-Uno de los resultados mas dificiles es la Generala, que se logra cuando se obtienen cinco dados iguales.
+Uno de los resultados mas difíciles es la Generala, que se logra cuando se obtienen cinco dados iguales.
 
-El calculo analitico de esta probabilidad es complejo, ya que depende de contar correctamente todas las combinaciones posibles de dados tirados en las 3 tiradas. Por otro parte, los dados a tirar en la 2a o 3er tirada dependen de cuantos dados se van guardando de las tiradas previas. Esto conlleva a una gran cantidad de combinaciones, lo cual complica el calculo anlitico exacto de la probabilidad buscada.
+El cálculo analítico de la probabilidad de cualquier resultado es muy complejo debido a la mecánica del juego. Un cálculo analítico necesitaría tener en cuenta todas las posibles combinaciones de dados a lanzar en la 2a o 3er tirada. Y éstos dependen de cuántos dados se van guardando de tiradas previas.
 
-En vez de buscar una solucion analitica exacta, lo que se puede hacer es una simulacion Monte Carlo. Esto consiste en realizar una gran cantidad de jugadas y contar en cuantas de ellas se obtuvo el resultado deseado.  
+Cuando buscar una solución analítica exacta se torna difícil, lo que se puede hacer es una simulación Monte Carlo. Esto consiste en simular una gran cantidad de jugadas y contar en cuantas de ellas se obtuvo el resultado deseado. La probabilidad de ese resultado es el cociente entre los éxitos y la cantidad de simulaciones.
 
-Este repositorio da una rutina en JavaScript que puede simular N jugadas y contar cuantas de ellas terminan con los 5 dados iguales (Generala) o 4 dados iguales (Poker). La probabilidad de cada resultado es cuantas veces ocurrio dividido la cantidad de simulaciones.
+Este repositorio contiene varias rutinas en JavaScript que simulan N jugadas y cuentan cuantas de ellas terminan con Generala (5 dados iguales), Poker (4 dados iguales), Full house (dos grupos con 3 y 2 dados) o Escalera (1 al 5 o 2 al 6).
 
 ## Resultados
 Efectuando 1,000,000 simulaciones, la probabilidades son:
