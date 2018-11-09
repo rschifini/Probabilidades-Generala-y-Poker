@@ -14,13 +14,26 @@ Este repositorio da una rutina en JavaScript que puede simular N jugadas y conta
 ## Resultados
 Efectuando 1,000,000 simulaciones, la probabilidades son:
 
-|Tirada|probabilidad|porcentaje|
-|----|-----------:|-------:|
-|Generala| 0.046 |4.6%|
-|Poker| 0.244 |24.4%|
-|Full House| 0.358 |35.8%|
+|Tirada|probabilidad|porcentaje|1 en...|
+|----|-----------:|-------:|---:|---:|
+|Generala| 0.046 |4.6%|21.8|
+|Poker| 0.244 |24.5%|4.1|
+|Full house| 0.358 |35.9%|2.8|
+|Escalera| 0.175 |17.5%|5.7|
 
-### Nota:
-- La rutina permite cambiar la cantidad de dados con que se juega. Los resultados en este caso son la probabilidad que todos los dados muestren el mismo numero o todos menos uno. 
-- 'Probabilidades Generala.js' simula Poker y Generala
-- 'Probabilidades Full.js' simula Full House
+### Archivos y estrategia:
+#### Poker y Generala
+*'Probabilidades - Generala - Five.js'*
+- Reserva el grupo mas numeroso de dados con el mismo valor
+- Puede descartar un grupo por otro si el nuevo grupo es mas numeroso
+
+#### Full House
+*'Probabilidades - Full.js'*
+- Reserva los dos grupos mas numerosos
+- No reserva mas de tres dados en un grupo 
+- Si los grupos consisten de 3 y 1 dados (e.g. 5551) entonces solo tira un dado (no ambos porque es menos probable obtener el par deseado)
+
+#### Escalera
+*'Probabilidades - Escalera - Straight.js'*
+- Reserva a lo sumo uno de cada resultado, los dados repetidos se vuelven a tirar
+- Si aparecen el 1 y el 6 entonces se descarta el 6. Esto evita escaleras discontinuas.

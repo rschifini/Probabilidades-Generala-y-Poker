@@ -13,12 +13,8 @@ function contarDados(roll, accum){
     return(accum)
 }
 
-function checkGenerala(accum, dice){
-    return( accum.some(x=> x==dice) )
-}
-
-function checkPoker(accum, dice){
-    return( accum.some(x=> x==(dice-1)) )
+function checkFull(accum){
+    return( accum.some(x=> x==3) && accum.some(x=> x==2) )
 }
 
 function vaciarAcumulado(dice) {
@@ -29,21 +25,20 @@ function vaciarAcumulado(dice) {
     return(acum)
 }
 
-function encontrarMaximo(acum){
-    var max = Math.max(...acum);
-    return(acum.indexOf(max));
+function encontrarDosMaximos(acum){
+    var ind = [0,1,2,3,4,5];
+    return(ind.sort((a,b)=> acum[a] < acum[b]?1:-1).slice(0,2))
 }
 
 function agruparDados(tiro, acum){
     var acum = contarDados(tiro, acum);
-    var dadoElegido = encontrarMaximo(acum);
-    acum = acum.map((x,idx) => idx == dadoElegido?x:0);
+    var dadoElegido = encontrarDosMaximos(acum);
+    acum = acum.map((x,idx) => (idx == dadoElegido[0] || idx== dadoElegido[1])?Math.min(x,3):0);
     return(acum)
 }
 
 
-var generalas = 0;
-var poker = 0;
+var full = 0;
 var dados = 5;
 var lados = 6;
 var simulaciones = 1000000;
@@ -53,17 +48,17 @@ for (let k = 0; k < simulaciones; k++) {
 
     let primerTiro = tirarDados(dados, lados);
     tiradaAcumulada = agruparDados(primerTiro, tiradaAcumulada);
+    let dadosGuardados = tiradaAcumulada.reduce((x,y)=>x+y,0);
     
-    let segundoTiro = tirarDados(dados - Math.max(...tiradaAcumulada) , lados);
+    let segundoTiro = tirarDados(dados - dadosGuardados , lados);
     tiradaAcumulada = agruparDados(segundoTiro, tiradaAcumulada);
+    dadosGuardados = tiradaAcumulada.reduce((x,y)=>x+y,0);
     
-    let tercerTiro = tirarDados(dados - Math.max(...tiradaAcumulada) , lados);
+    let tercerTiro = tirarDados(dados - dadosGuardados , lados);
     tiradaAcumulada = agruparDados(tercerTiro, tiradaAcumulada);
     
-    generalas += checkGenerala(tiradaAcumulada, dados)?1:0;
-    poker += checkPoker(tiradaAcumulada, dados)?1:0;
+    full += checkFull(tiradaAcumulada)?1:0;
 }
     
-console.log("Generala: " + (generalas / simulaciones * 100));
-console.log("Doble: "+ (generalas / simulaciones)*(generalas / simulaciones)*100);
-console.log("Poker: " + poker / simulaciones * 100);
+console.log("Full: " + (full / simulaciones * 100));
+console.log("Full: 1 in " + simulaciones/full);
